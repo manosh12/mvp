@@ -7,13 +7,20 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <div id="v-userList">
+        <p> @{{ message }} </p>
+    </div>
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: "hello i`am form vue",
+                }
+            },
+        }).mount("#v-userList")
+
+    </script>
 @stop
